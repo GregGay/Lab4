@@ -5,23 +5,11 @@ var credentials = require('./credentials.js');
 //create redis client                                                                                                                                                                                                                       
 var client = redis.createClient();
 
-//if the 'awesome' key doesn't exist, create it                                                                                                                                                                                             
-/***client.exists('awesome', function(error, exists) {
-    if(error) {
-        console.log('ERROR: '+error);
-    } else if(!exists) {
-        client.set('awesome', 0); //create the awesome key
-    };
-});*/
-
 //redis gives a value to error and exists                                                                                                                                                                                          
 client.exists('awesome', function(error, exists) {
-    //if error is defined, then there was probably some
-    //problem connecting to redis
     if(error) {
         console.log('ERROR: '+error);
     }
-    //otherwise exists will be available, and we can do something with it
     else if(!exists) {
         client.set('awesome', 0); //create the awesome key
     };
@@ -29,12 +17,9 @@ client.exists('awesome', function(error, exists) {
 
 //tracks cool
 client.exists('cool', function(error, exists) {
-    //if error is defined, then there was probably some
-    //problem connecting to redis
     if(error) {
         console.log('ERROR: '+error);
     }
-    //otherwise exists will be available, and we can do something with it
     else if(!exists) {
         client.set('cool', 0); //create the cool key
     };
@@ -42,12 +27,9 @@ client.exists('cool', function(error, exists) {
 
 //tracks rad
 client.exists('rad', function(error, exists) {
-    //if error is defined, then there was probably some
-    //problem connecting to redis
     if(error) {
         console.log('ERROR: '+error);
     }
-    //otherwise exists will be available, and we can do something with it
     else if(!exists) {
         client.set('rad', 0); //create the rad key
     };
@@ -55,12 +37,9 @@ client.exists('rad', function(error, exists) {
 
 //tracks gnarly
 client.exists('gnarly', function(error, exists) {
-    //if error is defined, then there was probably some
-    //problem connecting to redis
     if(error) {
         console.log('ERROR: '+error);
     }
-    //otherwise exists will be available, and we can do something with it
     else if(!exists) {
         client.set('gnarly', 0); //create the gnarly key
     };
@@ -68,12 +47,9 @@ client.exists('gnarly', function(error, exists) {
 
 //tracks groovy
 client.exists('groovy', function(error, exists) {
-    //if error is defined, then there was probably some
-    //problem connecting to redis
     if(error) {
         console.log('ERROR: '+error);
     }
-    //otherwise exists will be available, and we can do something with it
     else if(!exists) {
         client.set('groovy', 0); //create the groovy key
     };
